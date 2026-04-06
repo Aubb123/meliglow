@@ -1,0 +1,29 @@
+<div class="nav-align-top">
+    <ul class="nav nav-pills d-flex flex-wrap gap-2 mb-4">
+        <li class="nav-item">
+            <a class="@if(request()->routeIs('backend.comments.show')) badge bg-primary @else badge bg-label-primary @endif" 
+            href="{{ route('backend.comments.show', $comment->token) }}">
+                <i class="icon-base ri ri-link-m icon-sm me-2"></i>Détails
+            </a>
+        </li>
+        {{--<li class="nav-item">
+            <a class="@if(request()->routeIs('backend.comments.replies')) badge bg-primary @else badge bg-label-primary @endif" 
+            href="{{ route('backend.comments.replies', $comment->token) }}">
+                <i class="icon-base ri ri-link-m icon-sm me-2"></i>Réponse(s)
+            </a>
+        </li>--}}
+    </ul>
+    @if(request()->routeIs('backend.comments.replies'))
+    <div class="card mb-3">
+        <div class="card-body">
+            <div class="card academy-content shadow-none border">
+                <div class="pt-3">
+                    <div class="container">
+                        <h5><b>Commentaire:</b> <a href="{{ route('backend.comments.show', $comment->token) }}" class="text-primary">{{$comment->content}}</a></h5>
+                    </div>
+                </div>      
+            </div>
+        </div>
+    </div>
+    @endif
+</div>
