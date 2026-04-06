@@ -18,14 +18,14 @@ class ContactController extends Controller
     public function backend_contacts_index(): View
     {
         $contacts = Contact::all();
-        return view('backend/pages/contacts/Index', compact('contacts'));
+        return view('backend/pages/contacts/index', compact('contacts'));
     }
 
     public function backend_contacts_show($token): View
     {
         $contact = Contact::where('token', $token)->firstOrFail();
         
-        return view('backend/pages/contacts/Show', compact('contact'));
+        return view('backend/pages/contacts/show', compact('contact'));
     }
 
     public function backend_contacts_destroy($token): RedirectResponse
