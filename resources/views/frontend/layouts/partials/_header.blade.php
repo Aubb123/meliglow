@@ -231,8 +231,8 @@
                                             @csrf
                                         </form>
                                     @else
-                                        <a class="dropdown-item" href="{{ route('frontend.login') }}"> Se connecter</a>
-                                        <a class="dropdown-item" href="{{ route('frontend.register') }}"> S'inscrire</a>
+                                        <a class="dropdown-item" href="{{ route('login') }}"> Se connecter</a>
+                                        <a class="dropdown-item" href="{{ route('register') }}"> S'inscrire</a>
                                     @endauth
                                 </div>
                             </div>
